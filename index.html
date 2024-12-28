@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Follow Me!</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect with Me</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Follow Me on Social Media!</h1>
-      <p>Stay connected and see my latest updates.</p>
+      <h1>Connect with Me</h1>
+      <p>Follow me on social media to stay updated with my latest work and projects.</p>
     </header>
     <main>
       <div class="social-links">
@@ -28,40 +29,51 @@
 </html>
 
 <style>
-/* styles.css */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f9;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: #333;
   text-align: center;
 }
 .container {
   margin: 50px auto;
   max-width: 800px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
-header {
-  margin-bottom: 20px;
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+header p {
+  font-size: 1.2em;
+  color: #666;
 }
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   margin-top: 20px;
 }
 .btn {
-  padding: 10px 20px;
+  padding: 12px 25px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 50px;
   color: white;
   font-size: 16px;
+  transition: all 0.3s ease;
 }
 .github { background: #333; }
 .twitter { background: #1da1f2; }
 .instagram { background: #e1306c; }
 .linkedin { background: #0077b5; }
 .btn:hover {
-  opacity: 0.8;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 footer {
   margin-top: 40px;
@@ -69,4 +81,15 @@ footer {
   color: #555;
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.btn');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      alert(`Opening ${button.textContent} profile...`);
+    });
+  });
+});
+</script>
 
