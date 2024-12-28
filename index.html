@@ -1,85 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Landing Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #6A11CB, #2575FC);
-            color: white;
-            text-align: center;
-        }
-
-        .container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            padding: 20px;
-            color: #333;
-        }
-
-        .profile-picture {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 15px;
-            border: 4px solid #6A11CB;
-        }
-
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            color: #6A11CB;
-            text-decoration: none;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            padding: 10px 15px;
-            border: 2px solid #6A11CB;
-            border-radius: 5px;
-        }
-
-        .social-links a:hover {
-            background-color: #6A11CB;
-            color: white;
-            transform: scale(1.1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Follow Me!</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <img src="your-image-url-here.png" alt="Profile Picture" class="profile-picture">
-        <h1>Your Name</h1>
-        <p>Welcome to my social media hub! Click below to connect with me.</p>
-        <div class="social-links">
-            <a href="https://twitter.com" target="_blank">Twitter</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        </div>
-    </div>
+  <div class="container">
+    <header>
+      <h1>Follow Me on Social Media!</h1>
+      <p>Stay connected and see my latest updates.</p>
+    </header>
+    <main>
+      <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank" class="btn github">GitHub</a>
+        <a href="https://twitter.com/yourusername" target="_blank" class="btn twitter">Twitter</a>
+        <a href="https://www.instagram.com/yourusername" target="_blank" class="btn instagram">Instagram</a>
+        <a href="https://www.linkedin.com/in/yourusername" target="_blank" class="btn linkedin">LinkedIn</a>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>
+
+<style>
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f9;
+  text-align: center;
+}
+.container {
+  margin: 50px auto;
+  max-width: 800px;
+}
+header {
+  margin-bottom: 20px;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+}
+.github { background: #333; }
+.twitter { background: #1da1f2; }
+.instagram { background: #e1306c; }
+.linkedin { background: #0077b5; }
+.btn:hover {
+  opacity: 0.8;
+}
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #555;
+}
+</style>
+
