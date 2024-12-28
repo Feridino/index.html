@@ -4,22 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connect with Me</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: url('https://wallpapercave.com/wp/wp2569710.jpg') no-repeat center center fixed;
+      background: url('https://wallpapercave.com/wp/wp2463856.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
-      text-align: center;
+      overflow: hidden;
     }
     .overlay {
-      background: rgba(0, 0, 0, 0.7);
-      position: absolute;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -30,25 +28,25 @@
       z-index: 2;
       margin: 50px auto;
       max-width: 800px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
     }
     header h1 {
       font-size: 3em;
       margin-bottom: 10px;
     }
     header p {
-      font-size: 1.5em;
+      font-size: 1.4em;
       color: #ddd;
     }
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 25px;
-      margin-top: 20px;
-      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
     }
     .btn {
       text-decoration: none;
@@ -61,40 +59,56 @@
       justify-content: center;
       width: 70px;
       height: 70px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+      position: relative;
     }
-    .instagram {
-      background: radial-gradient(circle, #f58529, #dd2a7b, #8134af, #515bd4);
+    .btn::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      transform: translate(-50%, 10px);
     }
-    .youtube {
-      background: radial-gradient(circle, #ff0000, #cc0000);
+    .btn:hover::after {
+      opacity: 1;
+      transform: translate(-50%, 0);
     }
-    .discord {
-      background: radial-gradient(circle, #7289da, #4e69b2);
-    }
-    .twitch {
-      background: radial-gradient(circle, #9146ff, #772ce8);
-    }
-    .x {
-      background: #1da1f2;
-    }
+    .instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); }
+    .youtube { background: linear-gradient(45deg, #ff0000, #cc0000); }
+    .discord { background: linear-gradient(45deg, #7289da, #4e69b2); }
+    .twitch { background: linear-gradient(45deg, #9146ff, #772ce8); }
+    .x { background: linear-gradient(45deg, #1da1f2, #0d94e7); }
     .btn:hover {
-      transform: scale(1.15);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      transform: scale(1.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
     }
     footer {
       margin-top: 40px;
       font-size: 14px;
       color: #ddd;
     }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5em;
-      }
-      header p {
-        font-size: 1.2em;
-      }
+      header h1 { font-size: 2.5em; }
+      header p { font-size: 1.2em; }
       .btn {
         width: 60px;
         height: 60px;
@@ -112,19 +126,19 @@
     </header>
     <main>
       <div class="social-links">
-        <a href="https://www.instagram.com/rafeezury" target="_blank" class="btn instagram">
+        <a href="https://www.instagram.com/rafeezury" target="_blank" class="btn instagram" data-tooltip="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://www.youtube.com/@RafeeZury992" target="_blank" class="btn youtube">
+        <a href="https://www.youtube.com/@RafeeZury992" target="_blank" class="btn youtube" data-tooltip="YouTube">
           <i class="fab fa-youtube"></i>
         </a>
-        <a href="https://discord.com/invite/https://discord.gg/mtkr83QkDq" target="_blank" class="btn discord">
+        <a href="https://discord.gg/mtkr83QkDq" target="_blank" class="btn discord" data-tooltip="Discord">
           <i class="fab fa-discord"></i>
         </a>
-        <a href="https://www.twitch.tv/rafeezury" target="_blank" class="btn twitch">
+        <a href="https://www.twitch.tv/rafeezury" target="_blank" class="btn twitch" data-tooltip="Twitch">
           <i class="fab fa-twitch"></i>
         </a>
-        <a href="https://twitter.com/Orion" target="_blank" class="btn x">
+        <a href="https://twitter.com/Orion" target="_blank" class="btn x" data-tooltip="Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </div>
@@ -135,17 +149,17 @@
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const buttons = document.querySelectorAll('.btn');
-      buttons.forEach(button => {
-        button.addEventListener('click', (e) => {
-          e.preventDefault();
-          window.open(button.href, '_blank');
-        });
-      });
+      const container = document.querySelector('.container');
+      container.style.opacity = '0';
+      setTimeout(() => {
+        container.style.transition = 'opacity 1.5s ease-in-out';
+        container.style.opacity = '1';
+      }, 300);
     });
   </script>
 </body>
 </html>
+
 
 
 
