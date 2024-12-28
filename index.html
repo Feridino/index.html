@@ -6,6 +6,59 @@
   <title>Connect with Me</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      margin: 50px auto;
+      max-width: 800px;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #666;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 50px;
+      color: white;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    .github { background: #333; }
+    .twitter { background: #1da1f2; }
+    .instagram { background: #e1306c; }
+    .linkedin { background: #0077b5; }
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -25,71 +78,18 @@
       <p>&copy; 2024 Your Name. All Rights Reserved.</p>
     </footer>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.open(button.href, '_blank');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
 
-<style>
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
-  color: #333;
-  text-align: center;
-}
-.container {
-  margin: 50px auto;
-  max-width: 800px;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-header p {
-  font-size: 1.2em;
-  color: #666;
-}
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-.btn {
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 50px;
-  color: white;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-.github { background: #333; }
-.twitter { background: #1da1f2; }
-.instagram { background: #e1306c; }
-.linkedin { background: #0077b5; }
-.btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-footer {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #555;
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.btn');
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      alert(`Opening ${button.textContent} profile...`);
-    });
-  });
-});
-</script>
 
