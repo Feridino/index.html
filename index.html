@@ -17,6 +17,7 @@
       align-items: center;
       height: 100vh;
       overflow: hidden;
+      color: white;
     }
     .overlay {
       position: absolute;
@@ -31,10 +32,11 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      color: white;
       padding: 20px;
       backdrop-filter: blur(10px);
       border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+      animation: slideIn 1.5s ease-out;
     }
     .container h1 {
       font-size: 3rem;
@@ -62,17 +64,28 @@
       background: rgba(255, 255, 255, 0.2);
       color: white;
       font-size: 24px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     }
     .btn:hover {
-      transform: scale(1.2);
+      transform: scale(1.3);
       background: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
     .instagram { background: linear-gradient(45deg, #833AB4, #E1306C, #F77737); }
     .youtube { background: linear-gradient(45deg, #FF0000, #CC0000); }
     .discord { background: linear-gradient(45deg, #7289DA, #4E69B2); }
     .twitch { background: linear-gradient(45deg, #9146FF, #772CE8); }
     .x { background: linear-gradient(45deg, #1DA1F2, #0D94E7); }
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
     @media (max-width: 768px) {
       .btn {
         width: 50px;
@@ -108,6 +121,28 @@
       </a>
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('mouseover', () => {
+          btn.style.transform = 'rotate(360deg)';
+          setTimeout(() => btn.style.transform = 'scale(1.3)', 300);
+        });
+        btn.addEventListener('mouseout', () => {
+          btn.style.transform = 'scale(1)';
+        });
+      });
+
+      const container = document.querySelector('.container');
+      container.style.opacity = '0';
+      setTimeout(() => {
+        container.style.transition = 'opacity 1.5s ease-in-out';
+        container.style.opacity = '1';
+      }, 500);
+    });
+  </script>
 </body>
 </html>
 
