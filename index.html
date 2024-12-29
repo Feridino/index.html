@@ -6,23 +6,19 @@
   <title>Connect with Me</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    body, html {
+    body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images3.alphacoders.com/823/82352.jpg') no-repeat center center fixed;
+      background: url('https://w0.peakpx.com/wallpaper/462/240/HD-wallpaper-afghan-woman-beauty-eyes-girl-haunting-red.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
       overflow: hidden;
-    }
-
-    /* Video Background */
-    video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
+      color: white;
     }
 
     .overlay {
@@ -44,12 +40,12 @@
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
       animation: slideIn 1.5s ease-out;
-      color: white;
     }
 
     .container h1 {
       font-size: 4rem;
       margin-bottom: 15px;
+      text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
     }
 
     .container p {
@@ -75,30 +71,46 @@
       background: rgba(255, 255, 255, 0.2);
       color: white;
       font-size: 28px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .btn:hover {
       transform: scale(1.4);
+      background: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
     }
 
+    .instagram { background: linear-gradient(45deg, #833AB4, #E1306C, #F77737); }
+    .youtube { background: linear-gradient(45deg, #FF0000, #CC0000); }
+    .discord { background: linear-gradient(45deg, #7289DA, #4E69B2); }
+    .twitch { background: linear-gradient(45deg, #9146FF, #772CE8); }
+    .x { background: linear-gradient(45deg, #1DA1F2, #0D94E7); }
+
     @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+      .container h1 {
+        font-size: 3rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Video Background -->
-  <video autoplay muted loop>
-    <source src="QvKkvXz%20-%20Imgur.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Overlay -->
   <div class="overlay"></div>
-
-  <!-- Content -->
   <div class="container">
     <h1>Welcome to RafeeZury</h1>
     <p>Connect with me on social media:</p>
@@ -120,8 +132,31 @@
       </a>
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('mouseover', () => {
+          btn.style.transform = 'rotate(360deg)';
+          setTimeout(() => btn.style.transform = 'scale(1.4)', 300);
+        });
+        btn.addEventListener('mouseout', () => {
+          btn.style.transform = 'scale(1)';
+        });
+      });
+
+      const container = document.querySelector('.container');
+      container.style.opacity = '0';
+      setTimeout(() => {
+        container.style.transition = 'opacity 1.5s ease-in-out';
+        container.style.opacity = '1';
+      }, 500);
+    });
+  </script>
 </body>
 </html>
+
 
 
 
