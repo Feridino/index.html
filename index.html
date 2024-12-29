@@ -6,17 +6,29 @@
   <title>Connect with Me</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    body, html {
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('‪C:\Users\Zury\Downloads\RafeeLogo.webp') no-repeat center center fixed;
+      background: url('https://images3.alphacoders.com/823/82352.jpg') no-repeat center center fixed;
+      background: url('‪C:\Users\Zury\Downloads\page 1.jpg') no-repeat center center fixed;
       background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       overflow: hidden;
+    }
+    /* Video Background */
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
       color: white;
     }
 
@@ -39,6 +51,7 @@
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
       animation: slideIn 1.5s ease-out;
+      color: white;
     }
 
     .container h1 {
@@ -70,6 +83,7 @@
       background: rgba(255, 255, 255, 0.2);
       color: white;
       font-size: 28px;
+      transition: transform 0.3s ease;
       transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -84,8 +98,9 @@
     .discord { background: linear-gradient(45deg, #7289DA, #4E69B2); }
     .twitch { background: linear-gradient(45deg, #9146FF, #772CE8); }
     .x { background: linear-gradient(45deg, #1DA1F2, #0D94E7); }
-
     @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
       from {
         transform: translateY(-50px);
         opacity: 0;
@@ -95,7 +110,6 @@
         opacity: 1;
       }
     }
-
     @media (max-width: 768px) {
       .btn {
         width: 50px;
@@ -109,7 +123,14 @@
   </style>
 </head>
 <body>
+  <!-- Video Background -->
+  <video autoplay muted loop>
+    <source src="QvKkvXz%20-%20Imgur.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <!-- Overlay -->
   <div class="overlay"></div>
+  <!-- Content -->
   <div class="container">
     <h1>Welcome to RafeeZury</h1>
     <p>Connect with me on social media:</p>
@@ -131,7 +152,6 @@
       </a>
     </div>
   </div>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const buttons = document.querySelectorAll('.btn');
@@ -144,7 +164,6 @@
           btn.style.transform = 'scale(1)';
         });
       });
-
       const container = document.querySelector('.container');
       container.style.opacity = '0';
       setTimeout(() => {
@@ -155,6 +174,7 @@
   </script>
 </body>
 </html>
+
 
 
 
